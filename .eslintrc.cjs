@@ -1,29 +1,27 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
+  settings: { react: { version: "18.2" } },
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
     'plugin:react/recommended',
-    'plugin:jsdoc/recommended',
-    'plugin:tsdoc/recommended',
-    'plugin:prefer-arrow-functions/recommended',
     'eslint-config-prettier'
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs", "node_module"],
   parser: "@typescript-eslint/parser",
-  plugins: ['react',
-  'react-refresh',
-  '@typescript-eslint',
-  'jsx-a11y',
-  'jsdoc',
-  'tsdoc',
-  'prefer-arrow-functions',],
+  plugins: [
+    'react-refresh',
+    'prefer-arrow-functions',
+    'eslint-plugin-tsdoc',
+    'jsx-a11y',
+    'jsdoc',
+    'prefer-arrow-functions',
+    'filename-rules',
+  ],
   rules: {
     "react/prefer-stateless-function": "error",
-    "react/button-has-type": "error",
     "react/no-unused-prop-types": "error",
     "react/jsx-pascal-case": "error",
     "react/jsx-no-script-url": "error",
@@ -67,7 +65,7 @@ module.exports = {
       "warn",
       {
         selector: "default",
-        format: ["camelCase"],
+        format: ["PascalCase", "camelCase"],
         leadingUnderscore: "allow",
       },
       {
@@ -92,8 +90,8 @@ module.exports = {
       },
     ],
     "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
-    "filename-rules/match": [2, { ".ts": "camelcase", ".tsx": "pascalcase" }],
-    "import/no-default-export": "error",
+    "filename-rules/match": [2, {   ".ts": "camelcase" , ".tsx": "pascalcase" }],
+    'filename-rules/not-match': [0, 'kebabcase'],
     "jsx-a11y/no-autofocus": [
       2,
       {
@@ -144,7 +142,7 @@ module.exports = {
   {
     classPropertiesAllowed: true,
     disallowPrototype: true,
-    returnStyle: "unchanged",
+   
   },
     ],
     "arrow-body-style": "warn",
