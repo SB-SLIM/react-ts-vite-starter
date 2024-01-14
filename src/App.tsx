@@ -6,8 +6,6 @@ import Test from "./test";
 
 /**
  *npm run lint
- * npx lint-staged
- * App component
  */
 const App = () => {
   const [count, setCount] = useState(0);
