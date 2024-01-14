@@ -5,7 +5,7 @@ import "./App.css";
 import Test from "./test";
 
 /**
- *npm run lint
+ * App component
  */
 const App = () => {
   const [count, setCount] = useState(0);
