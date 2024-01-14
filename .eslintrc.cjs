@@ -6,19 +6,19 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    'plugin:react/recommended',
-    'eslint-config-prettier'
+    "plugin:react/recommended",
+    "eslint-config-prettier",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs", "node_module"],
   parser: "@typescript-eslint/parser",
   plugins: [
-    'react-refresh',
-    'prefer-arrow-functions',
-    'eslint-plugin-tsdoc',
-    'jsx-a11y',
-    'jsdoc',
-    'prefer-arrow-functions',
-    'filename-rules',
+    "react-refresh",
+    "prefer-arrow-functions",
+    "eslint-plugin-tsdoc",
+    "jsx-a11y",
+    "jsdoc",
+    "prefer-arrow-functions",
+    "filename-rules",
   ],
   rules: {
     "react/prefer-stateless-function": "error",
@@ -90,8 +90,7 @@ module.exports = {
       },
     ],
     "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
-    "filename-rules/match": [2, {   ".ts": "camelcase" , ".tsx": "pascalcase" }],
-    'filename-rules/not-match': [0, 'kebabcase'],
+    "filename-rules/match": [2, { ".ts": "camelcase", ".tsx": "pascalcase" }],
     "jsx-a11y/no-autofocus": [
       2,
       {
@@ -138,12 +137,11 @@ module.exports = {
 
     // Arrow functions
     "prefer-arrow-functions/prefer-arrow-functions": [
-  "warn",
-  {
-    classPropertiesAllowed: true,
-    disallowPrototype: true,
-   
-  },
+      "warn",
+      {
+        classPropertiesAllowed: true,
+        disallowPrototype: true,
+      },
     ],
     "arrow-body-style": "warn",
     "prefer-arrow-callback": [
@@ -154,5 +152,15 @@ module.exports = {
     ],
     "arrow-spacing": "error",
     "no-confusing-arrow": "error",
+  },
+
+  overrides: [
+    {
+      files: ["src/**/*.d.ts", "src/**/index.tsx", "src/main.tsx"],
+
+      rules: {
+        "filename-rules/match": [2, { ".ts": "kebabcase", ".tsx": "kebabcase" }],
       },
+    },
+  ],
 };
