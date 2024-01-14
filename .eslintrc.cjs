@@ -153,11 +153,9 @@ module.exports = {
     "arrow-spacing": "error",
     "no-confusing-arrow": "error",
   },
-
   overrides: [
     {
       files: ["src/**/*.d.ts", "src/**/index.tsx", "src/main.tsx"],
-
       rules: {
         "filename-rules/match": [2, { ".ts": "kebabcase", ".tsx": "kebabcase" }],
       },

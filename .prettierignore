@@ -1,0 +1,12 @@
+# Compiled & generated output
+/*/dist/
+
+# Cache
+/.cache
+
+# TypeScript
+/tsconfig.json
+
+# Misc
+/.husky
+*.hbs
